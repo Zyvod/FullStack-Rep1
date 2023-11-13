@@ -1,0 +1,47 @@
+INSERT INTO brands (brandname) VALUES ('Monster');
+INSERT INTO brands (brandname) VALUES ('Reign');
+INSERT INTO brands (brandname) VALUES ('Rip it');
+
+INSERT INTO flavors (brandname,flavor) VALUES ('Monster','Ultra Sunrise');
+INSERT INTO flavors (brandname,flavor) VALUES ('Monster','Ultra Red');
+INSERT INTO flavors (brandname,flavor) VALUES ('Monster','Ultra Rosa');
+INSERT INTO flavors (brandname,flavor) VALUES ('Monster','Zero Ultra');
+INSERT INTO flavors (brandname,flavor) VALUES ('Monster','Ultra Watermelon');
+INSERT INTO flavors (brandname,flavor) VALUES ('Monster','Ultra Violet');
+INSERT INTO flavors (brandname,flavor) VALUES ('Monster','Ultra Gold');
+INSERT INTO flavors (brandname,flavor) VALUES ('Monster','ZERO SUGAR');
+INSERT INTO flavors (brandname,flavor) VALUES ('Monster','Ultra Blue');
+INSERT INTO flavors (brandname,flavor) VALUES ('Monster','Ultra Peachy Keen');
+INSERT INTO flavors (brandname,flavor) VALUES ('Monster','REHAB Lemonade');
+INSERT INTO flavors (brandname,flavor) VALUES ('Monster','REHAB Peach');
+
+INSERT INTO flavors (brandname,flavor) VALUES ('Reign', 'Tropical Storm');
+INSERT INTO flavors (brandname,flavor) VALUES ('Reign', 'Reignbow Sherbet');
+INSERT INTO flavors (brandname,flavor) VALUES ('Reign', 'White Gummy Bear');
+INSERT INTO flavors (brandname,flavor) VALUES ('Reign', 'Razzle Berry');
+INSERT INTO flavors (brandname,flavor) VALUES ('Reign', 'Lilikoi Lychee');
+INSERT INTO flavors (brandname,flavor) VALUES ('Reign', 'Melon Mania');
+INSERT INTO flavors (brandname,flavor) VALUES ('Reign', 'Orange Dreamsicle');
+INSERT INTO flavors (brandname,flavor) VALUES ('Reign', 'Cherry Limeade');
+INSERT INTO flavors (brandname,flavor) VALUES ('Reign', 'Red Dragon');
+INSERT INTO flavors (brandname,flavor) VALUES ('Reign', 'Watermelon Warlord');
+
+INSERT INTO flavors (brandname,flavor) VALUES ('Rip it', 'Dragon Fire');
+INSERT INTO flavors (brandname,flavor) VALUES ('Rip it', 'Skreech in');
+INSERT INTO flavors (brandname,flavor) VALUES ('Rip it', 'Cand Man');
+INSERT INTO flavors (brandname,flavor) VALUES ('Rip it', 'YOLO');
+INSERT INTO flavors (brandname,flavor) VALUES ('Rip it', 'Melon Hi');
+INSERT INTO flavors (brandname,flavor) VALUES ('Rip it', 'Goliath');
+INSERT INTO flavors (brandname,flavor) VALUES ('Rip it', 'Power');
+INSERT INTO flavors (brandname,flavor) VALUES ('Rip it', 'Sting-er Mo');
+INSERT INTO flavors (brandname,flavor) VALUES ('Rip it', '3-Way');
+INSERT INTO flavors (brandname,flavor) VALUES ('Rip it', 'F-Bomb');
+INSERT INTO flavors (brandname,flavor) VALUES ('Rip it', 'LemoanR');
+INSERT INTO flavors (brandname,flavor) VALUES ('Rip it', 'G-Force');
+INSERT INTO flavors (brandname,flavor) VALUES ('Rip it', 'Red Zone');
+INSERT INTO flavors (brandname,flavor) VALUES ('Rip it', 'Citrus X');
+INSERT INTO flavors (brandname,flavor) VALUES ('Rip it', 'Atomic Pom');
+INSERT INTO flavors (brandname,flavor) VALUES ('Rip it', 'Lime Wrecker');
+INSERT INTO flavors (brandname,flavor) VALUES ('Rip it', 'Tribute Cherry Lime');
+INSERT INTO flavors (brandname,flavor) VALUES ('Rip it', 'Tribute');
+INSERT INTO flavors (brandname,flavor) VALUES ('Rip it', 'Tribute C.Y.P.-X');
