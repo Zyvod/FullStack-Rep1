@@ -71,7 +71,7 @@ app.get('/api/flavors/:id', async (req,res,next) => {
 
 app.delete('/api/flavors/:id', async (req,res,next) => {
   let flavorId = parseInt(req.params.id)
-  console.log('hit del route')
+
   if (typeof flavorId !== 'number') {
     next()
   } else {
@@ -84,6 +84,25 @@ app.delete('/api/flavors/:id', async (req,res,next) => {
     }
   }
 })
+
+
+app.delete('/api/brands/:id', async (req,res,next) => {
+  let brandId = req.params.id
+  let brandName = parseId(brandId)
+
+  if (typeof brandName === 'number') {
+    next()
+  } else {
+    try{
+      const result = await pool.query(`DELETE FROM brands WHERE id=$1 RETURNING *;`,[brandName])
+      res.status(200).json(result.rows)
+    } catch(err) {
+      console.error(err)
+      res.status(400).send('Bad Request')
+    }
+  }
+})
+
 
 app.use((req,res, next) => {
   next({message: 'The path you are looking for does not exist',status:400})

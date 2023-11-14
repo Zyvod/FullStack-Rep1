@@ -45,6 +45,10 @@ function populateFlavorResults(responseData) {
     const flavorBrand = document.createElement('h1')
       flavorBrand.id = 'FlavorBrand'
       flavorBrand.textContent = data.brandname
+      flavorBrand.addEventListener('click', async(e) => {
+        const result = await setBrandId(e)
+        getSingleBrandFlavors(result)
+      })
 
     const flavorName = document.createElement('h2')
       flavorName.className = 'flavor-name'
@@ -62,9 +66,11 @@ function populateFlavorResults(responseData) {
     const brandDelete = document.createElement('button')
       brandDelete.id = 'BrandDelete'
       brandDelete.textContent = `Delete Brand`
-      brandDelete.addEventListener('click', (e) => {
+      brandDelete.addEventListener('click', async(e) => {
         const delMe = e.target.parentNode.children[0].textContent
-        deleteBrand(delMe)
+        console.log(delMe)
+        const result = await setBrandId(delMe)
+        deleteBrand(result)
       })
 
     flavorPane.appendChild(flavorBrand)
@@ -85,8 +91,9 @@ function populateBrandResults(responseData) {
     const brandName = document.createElement('h1')
       brandName.textContent = `${data.brandname}`
       brandName.id = 'BrandName';
-      brandName.addEventListener('click', (e) => {
-        setBrandId(e)
+      brandName.addEventListener('click', async(e) => {
+        const result = await setBrandId(e)
+        getSingleBrandFlavors(result)
       })
     brandPane.appendChild(brandName)
     resultsPane.appendChild(brandPane)
@@ -94,14 +101,14 @@ function populateBrandResults(responseData) {
 }
 
 function setBrandId(brandName) {
-  // assign id to brandName.target.textContent
-  console.log(brandName.target)
-  let brandId =
-    brandName.target.textContent === 'Monster' ? 1 :
-    brandName.target.textContent === 'Reign' ? 2 :     brandName.target.textContent === 'Rip it' ? 3 :
-    undefined;
-  // make fetch request based on id number
-  getSingleBrandFlavors(brandId)
+  console.log(brandName)
+  // assign id to brandName and return for fetch request
+    let brandId =
+      brandName.target.textContent === 'Monster' ? 1 :
+      brandName.target.textContent === 'Reign' ? 2 :
+      brandName.target.textContent === 'Rip it' ? 3 :
+      undefined;
+    return brandId
 }
 
 async function getSingleBrandFlavors(id) {
@@ -126,6 +133,23 @@ async function deleteFlavor(id) {
     }
   })
   .then(response =>  response.json())
+  .then(response => {
+    console.log(`Successfully Deleted ${response}`)
+  })
+  .catch(error => {
+    console.error('Delete Request Failed:',error);
+  })
+}
+
+async function deleteBrand(id) {
+  console.log('Attempting Brand Removal')
+  await fetch(`http://localhost:3000/api/brands/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  })
+  .then(response => response.json())
   .then(response => {
     console.log(`Successfully Deleted ${response}`)
   })
