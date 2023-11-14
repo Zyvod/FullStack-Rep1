@@ -47,6 +47,23 @@ app.get('/api/flavors' , async (req,res) =>{
   }
 })
 
+app.get('/api/flavors/:id', async (req,res,next) => {
+  let brandId = req.params.id;
+  let brandName = await parseId(brandId);
+
+  if (brandName === undefined) {
+    next();
+  } else {
+    try {
+      const result = await pool.query(`SELECT * FROM flavors WHERE brandname = $1;`, [brandName])
+      res.status(200).json(result.rows);
+    } catch(err) {
+      console.error(err);
+      res.status(400).send('Bad Request');
+    }
+  }
+});
+
 app.use((req,res, next) => {
   next({message: 'The path you are looking for does not exist',status:400})
 })
@@ -60,3 +77,13 @@ app.use((err,req,res,next) => {
 app.listen(APIPORT, (req,res) =>{
   console.log("Server Listening On PORT 3000")
 })
+
+async function parseId(brandId) {
+  let brandName =
+    brandId === '1' ? 'Monster' :
+    brandId === '2' ? 'Reign' :
+    brandId === '3' ? 'Rip It' :
+    undefined;
+
+  return brandName;
+}

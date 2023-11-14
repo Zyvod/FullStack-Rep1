@@ -1,0 +1,117 @@
+body {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDbqxp8s6csAslxlLH2Ka5P23tnF--m3o9cw&usqp=CAU');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+#Container {
+  width: 80%;
+  flex-wrap: wrap;
+  flex: auto;
+  margin: auto;
+  padding: 50px;
+  border-radius: 20px;
+  background-color: rgb(27, 40, 56, 95%);
+  opacity: 1;
+  font-family: "Motiva Sans", "Twemoji", "Noto Sans", Helvetica, sans-serif;
+  text-align: center;
+  color: rgb(220 222 223);
+}
+
+#Flavors {
+  width: 100px;
+  height: 50px;
+  margin: auto;
+  padding-left: 0%;
+  border: 5px;
+  border-radius: 0;
+  border-style: inset;
+  border-color: aliceblue;
+  background-color: rgb(42 71 94);
+  opacity: 1;
+  font-family: "Motiva Sans", "Twemoji", "Noto Sans", Helvetica, sans-serif;
+  font: bold;
+  font-size: large;
+  color: rgb(220 222 223);
+}
+
+#Brands {
+  width: 100px;
+  height: 50px;
+  margin: auto;
+  border: 5px;
+  border-radius: 0;
+  border-style: inset;
+  border-color: aliceblue;
+  background-color: rgb(42 71 94);
+  opacity: 1;
+  font-family: "Motiva Sans", "Twemoji", "Noto Sans", Helvetica, sans-serif;
+  font: bold;
+  font-size: large;
+  color: rgb(220 222 223);
+}
+
+#ResultsPane{
+  width: 80%;
+  flex-wrap: wrap;
+  flex: auto;
+  margin: auto;
+  padding: 50px;
+  border-radius: 20px;
+  background-color: rgb(27, 40, 56, 95%);
+  opacity: 1;
+  font-family: "Motiva Sans", "Twemoji", "Noto Sans", Helvetica, sans-serif;
+  text-align: center;
+  color: rgb(220 222 223);
+}
+
+#FlavorBrand {
+  width: 40%;
+  margin: auto;
+  margin-top: 20px;
+  padding: 5%;
+  border: 5px inset rgb(219 205 205 / 16%);
+  border-radius: 0%;
+  background-color: rgb(27 40 56);
+}
+
+#FlavorName {
+  width: 40%;
+  margin: auto;
+  margin-top: 20px;
+  padding: 5%;
+  border: 5px inset rgb(219 205 205 / 16%);
+  border-radius: 0%;
+  background-color: rgb(27 40 56);
+}
+
+#BrandName {
+  width: 40%;
+  margin: auto;
+  margin-top: 20px;
+  padding: 5%;
+  border: 5px inset rgb(219 205 205 / 16%);
+  border-radius: 0%;
+  background-color: rgb(27 40 56);
+}
+
+#BrandPane {
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+  padding: 5%;
+  border: 5px inset rgb(219 205 205 / 16%);
+  border-radius: 0%;
+  background-color: rgb(27 40 56);
+}
+
+#FlavorPane {
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+  padding: 5%;
+  border: 5px inset rgb(219 205 205 / 16%);
+  border-radius: 0%;
+  background-color: rgb(27 40 56);
+}
