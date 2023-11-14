@@ -1,0 +1,17 @@
+{
+  "name": "fullstack-rep1",
+  "version": "1.0.0",
+  "description": "First repetition of a FullStack application\r ERD: https://drawsql.app/teams/daddy-rehab-n-friends/diagrams/full-stack-proj-rep-1\r Client-Server-Database:![FullStack Rep 1](https://github.com/Zyvod/FullStack-Rep1/assets/134031883/e0e987d5-cf68-42e4-ab17-ddf1d4996d4b)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "node": "^21.1.0",
+    "nodemon": "^3.0.1",
+    "pg": "^8.11.3"
+  }
+}
