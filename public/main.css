@@ -76,12 +76,12 @@ body {
   background-color: rgb(27 40 56);
 }
 
-#FlavorName {
+.flavor-name {
   width: 40%;
   margin: auto;
   margin-top: 20px;
   padding: 5%;
-  border: 5px inset rgb(219 205 205 / 16%);
+  /* border: 5px inset rgb(219 205 205 / 16%); */
   border-radius: 0%;
   background-color: rgb(27 40 56);
 }
@@ -114,4 +114,42 @@ body {
   border: 5px inset rgb(219 205 205 / 16%);
   border-radius: 0%;
   background-color: rgb(27 40 56);
+}
+
+#FlavorDelete {
+  width: 20%;
+  height: 20%;
+  margin: auto;
+  margin-top: 5%;
+  margin-right: 5%;
+  padding-left: 0%;
+  border: 5px;
+  border-radius: 0;
+  border-style: inset;
+  border-color: aliceblue;
+  background-color: rgb(42 71 94);
+  opacity: 1;
+  font-family: "Motiva Sans", "Twemoji", "Noto Sans", Helvetica, sans-serif;
+  font: bold;
+  font-size: large;
+  color: rgb(220 222 223);
+}
+
+#BrandDelete {
+  width: 20%;
+  height: 20%;
+  margin: auto;
+  margin-top: 5%;
+  margin-left: 5%;
+  padding-left: 0%;
+  border: 5px;
+  border-radius: 0;
+  border-style: inset;
+  border-color: aliceblue;
+  background-color: rgb(42 71 94);
+  opacity: 1;
+  font-family: "Motiva Sans", "Twemoji", "Noto Sans", Helvetica, sans-serif;
+  font: bold;
+  font-size: large;
+  color: rgb(220 222 223);
 }

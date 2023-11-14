@@ -25,8 +25,10 @@ app.use(morgan('tiny'))
 
 app.use(express.json())
 
+
+// GET ALL ROUTES
 app.get('/api/brands', async(req,res) => {
-  console.log('working')
+  console.log('Set your brand')
   try {
     const result = await pool.query(`SELECT * FROM brands;`)
     res.status(200).send(result.rows)
@@ -47,6 +49,7 @@ app.get('/api/flavors' , async (req,res) =>{
   }
 })
 
+// GET ONE ROUTES
 app.get('/api/flavors/:id', async (req,res,next) => {
   let brandId = req.params.id;
   let brandName = await parseId(brandId);
@@ -63,6 +66,24 @@ app.get('/api/flavors/:id', async (req,res,next) => {
     }
   }
 });
+
+// DELETE ROUTES
+
+app.delete('/api/flavors/:id', async (req,res,next) => {
+  let flavorId = parseInt(req.params.id)
+  console.log('hit del route')
+  if (typeof flavorId !== 'number') {
+    next()
+  } else {
+    try {
+      const result = await pool.query(`DELETE FROM flavors WHERE id=$1 RETURNING *;`,[flavorId] )
+      res.status(200).json(result.rows)
+    } catch(err) {
+      console.error(err)
+      res.status(400).send('Bad Request')
+    }
+  }
+})
 
 app.use((req,res, next) => {
   next({message: 'The path you are looking for does not exist',status:400})
@@ -82,7 +103,7 @@ async function parseId(brandId) {
   let brandName =
     brandId === '1' ? 'Monster' :
     brandId === '2' ? 'Reign' :
-    brandId === '3' ? 'Rip It' :
+    brandId === '3' ? 'Rip it' :
     undefined;
 
   return brandName;
