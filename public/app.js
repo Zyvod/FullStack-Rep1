@@ -157,3 +157,55 @@ async function deleteBrand(id) {
     console.error('Delete Request Failed:',error);
   })
 }
+
+const createBtn = document.getElementById('create')
+createBtn.addEventListener('click', (e) => {
+  createStuff()
+})
+
+async function createStuff() {
+  let flavor = 'bad'
+  let brand = 'Monster'
+
+  let data = {
+    flavor: flavor,
+    brand: brand
+  }
+  try {
+    const respnonse = await fetch('http://localhost:3000/api/create-flav', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(response =>{
+      console.log(`Successfully Created ${response}`)
+    })
+  } catch(error) {
+    console.error('Creation Failed:',error)
+  }
+}
+
+const updateBtn = document.getElementById('Update')
+updateBtn.addEventListener('click', async (e) => {
+  let flavor = 'bad'
+  let brand = 'Rip it'
+  let data = {
+    brand: brand,
+    flavor: flavor
+  }
+  try {
+    const response = await fetch('http://localhost:3000/api/update-flav',{
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+  } catch(error) {
+    console.error('Error:', error)
+  }
+})
+

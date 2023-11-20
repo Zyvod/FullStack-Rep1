@@ -52,6 +52,23 @@ body {
   color: rgb(220 222 223);
 }
 
+
+#create {
+  width: 100px;
+  height: 50px;
+  margin: auto;
+  border: 5px;
+  border-radius: 0;
+  border-style: inset;
+  border-color: aliceblue;
+  background-color: rgb(42 71 94);
+  opacity: 1;
+  font-family: "Motiva Sans", "Twemoji", "Noto Sans", Helvetica, sans-serif;
+  font: bold;
+  font-size: large;
+  color: rgb(220 222 223);
+}
+
 #ResultsPane{
   width: 80%;
   flex-wrap: wrap;

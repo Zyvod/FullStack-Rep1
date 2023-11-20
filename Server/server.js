@@ -67,6 +67,7 @@ app.get('/api/flavors/:id', async (req,res,next) => {
   }
 });
 
+
 // DELETE ROUTES
 
 app.delete('/api/flavors/:id', async (req,res,next) => {
@@ -100,6 +101,31 @@ app.delete('/api/brands/:id', async (req,res,next) => {
       console.error(err)
       res.status(400).send('Bad Request')
     }
+  }
+})
+
+app.put('/api/create-flav', async (req,res) => {
+  let data = req.body
+  try {
+    const result = await pool.query(`INSERT INTO flavors (brandname,flavor) VALUES ($1,$2) RETURNING *;`, [data.brand,data.flavor])
+    res.status(200).send(result.rows)
+  } catch(err) {
+    console.error(err)
+    res.status(400).send('Bad Request')
+  }
+})
+
+app.patch('/api/update-flav', async (req,res) => {
+  let data = req.body
+  try {
+    const result = await pool.query(`UPDATE flavors
+    SET brandname = $1
+    WHERE flavor = $2
+    RETURNING *;`,[data.brand,data.flavor])
+    res.status(200).send(result.rows)
+  } catch(err) {
+    console.error(err)
+    res.status(400).send('Bad Request')
   }
 })
 
